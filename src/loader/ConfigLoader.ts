@@ -9,4 +9,6 @@ export const cred = {
     MYSQL_DB_DATABASE: process.env.MYSQL_DB_DATABASE,
     MYSQL_DB_PORT: "",
     MONGO_DB_SRV: process.env.MONGO_DB_SRV,
+    JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
+    JWT_SECRET_KEY_EXPIRE: process.env.JWT_SECRET_KEY_EXPIRE,
 }

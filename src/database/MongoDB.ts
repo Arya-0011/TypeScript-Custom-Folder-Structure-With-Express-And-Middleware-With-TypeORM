@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import { cred } from "../loader/ConfigLoader";
+import { User } from "../Entities/User";
 
 const mongoConnectionOptions = {
 	useNewUrlParser: true,
@@ -16,6 +17,7 @@ export const MongoDataSource = new DataSource({
 	type: "mongodb",
 	url: cred.MONGO_DB_SRV,
 	synchronize: false,
-	entities: [],
+	entities: [User], // Add the User entity here
 	...mongoConnectionOptions
-});
+  });
+  

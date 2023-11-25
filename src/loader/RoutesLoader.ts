@@ -1,8 +1,12 @@
 import { Application } from "express";
 import healthCheckRouter from "../routes/HealthRoutes";
+import authRoutes from "../routes/AuthRoutes"
+import userRoutes from "../routes/UserRoutes"
 
 export class RoutesLoader {
     public static initRoutes(app: Application, version: string) {
         app.use(`/api/${version}/health`, healthCheckRouter);
+        app.use(`/api/${version}/auth`, authRoutes);
+        app.use(`/api/${version}/users`, userRoutes);
     }
 }

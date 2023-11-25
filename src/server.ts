@@ -11,10 +11,9 @@ RoutesLoader.initRoutes(app, versions);
 MiddlewareLoader.init(app);
 
 
-Promise.all([MysqlDataSource.initialize(), MongoDataSource.initialize()])
+Promise.all([MongoDataSource.initialize()])
 
   .then(async () => {
-    console.info("Connection initialized with TYPEORM... with Postgres Mysql and MongoDB");
     console.info("Connection initialized with SEQUELIZE... with Postgres Mysql and MongoDB");
 
     app.listen(cred.PORT, () => {
