@@ -1,5 +1,5 @@
 import { AuthController } from './../controller/AuthController';
-import { awaitHandlerFactory } from '../middleware/AwaitHandlerFactoryMiddleware';
+import { awaitHandlerFactory } from '../middlewares/AwaitHandlerFactoryMiddleware';
 import { Router } from "express";
 
 const router = Router();

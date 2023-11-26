@@ -1,4 +1,4 @@
-import { awaitHandlerFactory } from '../middleware/AwaitHandlerFactoryMiddleware';
+import { awaitHandlerFactory } from '../middlewares/AwaitHandlerFactoryMiddleware';
 import { HealthController } from './../controller/HealthController';
 import { Router } from "express";
 

@@ -14,7 +14,7 @@ MiddlewareLoader.init(app);
 Promise.all([MongoDataSource.initialize()])
 
   .then(async () => {
-    console.info("Connection initialized with SEQUELIZE... with Postgres Mysql and MongoDB");
+    console.info("Connection initialized MongoDB");
 
     app.listen(cred.PORT, () => {
       console.info(`Server running on port ${cred.PORT}`);
