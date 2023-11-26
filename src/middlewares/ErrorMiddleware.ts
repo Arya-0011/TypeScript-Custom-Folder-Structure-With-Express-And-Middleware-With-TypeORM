@@ -18,7 +18,7 @@ function errorMiddleware(err: any, req: Request, res: Response, next: NextFuncti
 
     const { message, code, error, status, data, stack } = err;
     console.log(err)
-    if (cred.SERVER_CRED === "development") {
+    if (cred.SERVER_ENV === "development") {
         console.info(`[Exception] ${error}, [Code] ${code}`);
         console.info(`[Error] ${message}`);
         console.info(`[Stack] ${stack}`);
