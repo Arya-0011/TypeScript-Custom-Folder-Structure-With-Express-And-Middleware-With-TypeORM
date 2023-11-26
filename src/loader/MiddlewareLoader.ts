@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, Application } from 'express';
 import { InvalidEndpointException } from '../utils/Exceptions/ApiException';
-import errorMiddleware from '../middleware/ErrorMiddleware';
+import errorMiddleware from '../middlewares/ErrorMiddleware';
 
 class MiddlewareLoader {
     public static init(app: Application): void {

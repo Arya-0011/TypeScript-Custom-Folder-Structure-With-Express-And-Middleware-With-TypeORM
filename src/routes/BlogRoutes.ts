@@ -1,11 +1,11 @@
-import { UserController } from './../controller/UserController';
+import { BlogController } from './../controller/BlogController';
 import { awaitHandlerFactory } from '../middlewares/AwaitHandlerFactoryMiddleware';
 import { Router } from "express";
 import jwtMiddleware from '../utils/Token';
 
 const router = Router();
-const userController = new UserController();
+const blogController = new BlogController();
 
-router.get('/allUsers', jwtMiddleware.verifyToken, awaitHandlerFactory(userController.allUser));
+router.get('/blogs', jwtMiddleware.verifyToken, awaitHandlerFactory(blogController.blog));
 
 export default router;
