@@ -6,9 +6,11 @@ import { structureResponse } from "../utils/StructureResponse";
 import { InvalidCredentialsException, RegistrationFailedException, UserFailedException } from "../utils/Exceptions/AuthException";
 import jwtMiddleware from '../utils/Token';
 
+
 export class AuthService {
 
     private userRepository = MongoDataSource.getRepository(User);
+
 
     private async isUserExist(email: string): Promise<boolean> {
         const existingUser = await this.userRepository.findOne({ where: { email } });
@@ -67,12 +69,17 @@ export class AuthService {
 
             const token = jwtMiddleware.generateToken(user);
 
+            req.session.user = {
+                email: user.email,
+                username: user.username,
+            };
+
             const responseBody = {
                 email: user.email,
                 username: user.username,
                 token
             };
-
+            
             return structureResponse(responseBody, true, 'User logged in successfully');
 
         } catch (error) {

@@ -14,7 +14,6 @@ export class UserService {
         try {
 
             const allUserData = await this.userRepository.find();
-
             return structureResponse(allUserData, true, "List of all Users")
         } catch (error) {
             return structureResponse(error, true, "List of all Users")

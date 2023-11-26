@@ -8,7 +8,7 @@ export class Exceptions extends Error {
 
     constructor(code: number, message: string, data?: any, status: number = 401) {
         super(message);
-        if (cred.SERVER_CRED === "development") this.message = "Api Error: " + message;
+        if (cred.SERVER_ENV === "development") this.message = "Api Error: " + message;
         else this.message = message;
         this.name = "Api Error"
         this.code = code;
@@ -27,7 +27,7 @@ export class DatabaseExceptions extends Error {
 
     constructor(code: number, message: string, data?: any, isOperational: boolean = false, status: number = 404) {
         super(message);
-        if (cred.SERVER_CRED === "development") this.message = "Database Error: " + message;
+        if (cred.SERVER_ENV === "development") this.message = "Database Error: " + message;
         else this.message = message;
         this.name = "Database Error";
         this.code = code;
